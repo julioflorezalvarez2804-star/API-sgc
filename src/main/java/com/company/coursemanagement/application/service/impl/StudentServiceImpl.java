@@ -9,10 +9,8 @@ import com.company.coursemanagement.domain.repository.StudentRepository;
 
 import java.util.List;
 
-/**
- * Depends only on the StudentRepository abstraction (Dependency Inversion Principle),
- * never on a concrete infrastructure implementation.
- */
+
+
 public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository studentRepository;
