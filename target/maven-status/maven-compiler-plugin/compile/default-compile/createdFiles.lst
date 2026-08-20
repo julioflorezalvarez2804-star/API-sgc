@@ -1,7 +1,0 @@
-com\company\coursemanagement\application\dto\StudentMapper.class
-com\company\coursemanagement\application\dto\EnrollmentMapper.class
-com\company\coursemanagement\ApiGestionDeCursosApplication.class
-com\company\coursemanagement\application\dto\CourseMapper.class
-com\company\coursemanagement\application\dto\CourseDTO.class
-com\company\coursemanagement\application\dto\StudentDTO.class
-com\company\coursemanagement\application\dto\EnrollmentDTO.class
