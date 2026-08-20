@@ -14,10 +14,12 @@ import com.company.coursemanagement.domain.model.EnrollmentStatus;
 import com.company.coursemanagement.domain.repository.CourseRepository;
 import com.company.coursemanagement.domain.repository.EnrollmentRepository;
 import com.company.coursemanagement.domain.repository.StudentRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class EnrollmentServiceImpl implements EnrollmentService {
 
     private final EnrollmentRepository enrollmentRepository;

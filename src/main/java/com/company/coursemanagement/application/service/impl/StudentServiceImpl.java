@@ -6,11 +6,11 @@ import com.company.coursemanagement.application.service.StudentService;
 import com.company.coursemanagement.domain.exception.StudentNotFoundException;
 import com.company.coursemanagement.domain.model.Student;
 import com.company.coursemanagement.domain.repository.StudentRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
-
+@Service
 public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository studentRepository;

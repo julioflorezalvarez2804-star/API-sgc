@@ -6,9 +6,11 @@ import com.company.coursemanagement.application.service.CourseService;
 import com.company.coursemanagement.domain.exception.CourseNotFoundException;
 import com.company.coursemanagement.domain.model.Course;
 import com.company.coursemanagement.domain.repository.CourseRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements CourseService {
 
     private final CourseRepository courseRepository;
