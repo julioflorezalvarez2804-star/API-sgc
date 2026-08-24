@@ -1,5 +1,8 @@
 package com.company.coursemanagement.domain.model;
 
+import com.company.coursemanagement.infrastructure.entity.CourseEntity;
+import com.company.coursemanagement.infrastructure.entity.StudentEntity;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -76,12 +79,7 @@ public class Enrollment {
 
     @Override
     public String toString() {
-        return "Enrollment{" +
-                "id=" + id +
-                ", studentId=" + studentId +
-                ", courseId=" + courseId +
-                ", enrollmentDate=" + enrollmentDate +
-                ", status=" + status +
-                '}';
+        return null;
     }
+
 }

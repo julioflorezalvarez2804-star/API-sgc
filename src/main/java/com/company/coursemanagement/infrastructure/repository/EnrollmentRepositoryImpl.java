@@ -73,6 +73,7 @@ public class EnrollmentRepositoryImpl implements EnrollmentRepository {
     private EnrollmentEntity toEntity(Enrollment enrollment) {
         StudentEntity student = studentJpaRepository.getReferenceById(enrollment.getStudentId());
         CourseEntity course = courseJpaRepository.getReferenceById(enrollment.getCourseId());
+
         return new EnrollmentEntity(
                 enrollment.getId(),
                 student,

@@ -1,19 +1,10 @@
 package com.company.coursemanagement;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class ApiGestionDeCursosApplication implements CommandLineRunner {
+@SpringBootApplication(scanBasePackages = "com.company.coursemanagement")
 
-    public static void main(String[] args) {
-        // 1. Inicia el framework Spring Boot
-        SpringApplication.run(ApiGestionDeCursosApplication.class, args);
-    }
+public class ApiGestionDeCursosApplication
 
-    @Override
-    public void run(String... args) throws Exception {
-
-    }
-}
+{ public static void main(String[] args) { SpringApplication.run(ApiGestionDeCursosApplication.class, args); } }

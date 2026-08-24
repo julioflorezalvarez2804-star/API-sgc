@@ -5,51 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31ba8c22-33fe-40ab-bd27-13c3ff05e32d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/StudentRepositoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/ApiGestionDeCursosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/ApiGestionDeCursosApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/StudentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/EnrollmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/EnrollmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/StudentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/ApiGestionDeCursosApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/dto/CourseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/dto/CourseMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/dto/EnrollmentDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/dto/EnrollmentMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/dto/StudentDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/dto/StudentMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/service/CourseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/service/EnrollmentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/service/StudentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/service/StudentServices.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/service/impl/CourseServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/service/impl/EnrollmentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/application/service/impl/StudentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/exception/BusinessException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/exception/CourseFullException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/exception/CourseNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/exception/DuplicateEnrollmentException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/exception/EnrollmentNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/exception/StudentNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/model/Course.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/model/Enrollment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/model/EnrollmentStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/model/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/repository/CourseRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/repository/EnrollmentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/domain/repository/StudentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/infrastructure/repository/InMemoryCourseRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/infrastructure/repository/InMemoryEnrollmentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/infrastructure/repository/InMemoryStudentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/CourseMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/EnrollmentMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/InputReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/StudentMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/shared/IdGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/model/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/model/Enrollment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/repository/EnrollmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/repository/EnrollmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/entity/EnrollmentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/entity/EnrollmentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/EnrollmentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/EnrollmentRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/jpa/EnrollmentJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/jpa/EnrollmentJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/jpa/StudentJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/jpa/StudentJpaRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

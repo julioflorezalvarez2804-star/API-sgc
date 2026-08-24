@@ -1,13 +1,11 @@
 package com.company.coursemanagement.infrastructure.entity;
 
-import com.company.coursemanagement.domain.model.EnrollmentStatus;
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
+import com.company.coursemanagement.domain.model.EnrollmentStatus;
 
 @Entity
-@Table(name = "enrollments",
-        uniqueConstraints = @UniqueConstraint(name = "uk_student_course", columnNames = {"student_id", "course_id"}))
+@Table(name = "enrollments")
 public class EnrollmentEntity {
 
     @Id
@@ -15,25 +13,23 @@ public class EnrollmentEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id", nullable = false, foreignKey = @ForeignKey(name = "fk_enrollment_student"))
+    @JoinColumn(name = "student_id", nullable = false)
     private StudentEntity student;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id", nullable = false, foreignKey = @ForeignKey(name = "fk_enrollment_course"))
+    @JoinColumn(name = "course_id", nullable = false)
     private CourseEntity course;
 
     @Column(name = "enrollment_date", nullable = false)
     private LocalDate enrollmentDate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false, length = 20)
+    @Column(name = "status", nullable = false)
     private EnrollmentStatus status;
 
-    public EnrollmentEntity() {
-    }
+    public EnrollmentEntity() {}
 
-    public EnrollmentEntity(Long id, StudentEntity student, CourseEntity course,
-                             LocalDate enrollmentDate, EnrollmentStatus status) {
+    public EnrollmentEntity(Long id, StudentEntity student, CourseEntity course, LocalDate enrollmentDate, EnrollmentStatus status) {
         this.id = id;
         this.student = student;
         this.course = course;
@@ -41,43 +37,19 @@ public class EnrollmentEntity {
         this.status = status;
     }
 
-    public Long getId() {
-        return id;
-    }
+    // Getters y setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public StudentEntity getStudent() { return student; }
+    public void setStudent(StudentEntity student) { this.student = student; }
 
-    public StudentEntity getStudent() {
-        return student;
-    }
+    public CourseEntity getCourse() { return course; }
+    public void setCourse(CourseEntity course) { this.course = course; }
 
-    public void setStudent(StudentEntity student) {
-        this.student = student;
-    }
+    public LocalDate getEnrollmentDate() { return enrollmentDate; }
+    public void setEnrollmentDate(LocalDate enrollmentDate) { this.enrollmentDate = enrollmentDate; }
 
-    public CourseEntity getCourse() {
-        return course;
-    }
-
-    public void setCourse(CourseEntity course) {
-        this.course = course;
-    }
-
-    public LocalDate getEnrollmentDate() {
-        return enrollmentDate;
-    }
-
-    public void setEnrollmentDate(LocalDate enrollmentDate) {
-        this.enrollmentDate = enrollmentDate;
-    }
-
-    public EnrollmentStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(EnrollmentStatus status) {
-        this.status = status;
-    }
+    public EnrollmentStatus getStatus() { return status; }
+    public void setStatus(EnrollmentStatus status) { this.status = status; }
 }
