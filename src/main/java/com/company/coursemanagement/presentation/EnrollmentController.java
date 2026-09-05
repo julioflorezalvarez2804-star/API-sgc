@@ -2,6 +2,12 @@ package com.company.coursemanagement.presentation;
 
 import com.company.coursemanagement.application.dto.EnrollmentDTO;
 import com.company.coursemanagement.application.service.EnrollmentService;
+import com.company.coursemanagement.domain.exception.BusinessException;
+import com.company.coursemanagement.domain.exception.CourseFullException;
+import com.company.coursemanagement.domain.exception.CourseNotFoundException;
+import com.company.coursemanagement.domain.exception.DuplicateEnrollmentException;
+import com.company.coursemanagement.domain.exception.EnrollmentNotFoundException;
+import com.company.coursemanagement.domain.exception.StudentNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,14 +25,28 @@ public class EnrollmentController {
     }
 
     @PostMapping
-    public ResponseEntity<EnrollmentDTO> create(@RequestBody EnrollmentDTO enrollmentDTO) {
-        EnrollmentDTO created = enrollmentService.create(enrollmentDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+    public ResponseEntity<Object> create(@RequestBody EnrollmentDTO enrollmentDTO) {
+        try {
+            EnrollmentDTO created = enrollmentService.create(enrollmentDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        } catch (StudentNotFoundException | CourseNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.of(e.getMessage()));
+        } catch (DuplicateEnrollmentException | CourseFullException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(ErrorResponse.of(e.getMessage()));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().body(ErrorResponse.of(e.getMessage()));
+        }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EnrollmentDTO> findById(@PathVariable Long id) {
-        return ResponseEntity.ok(enrollmentService.findById(id));
+    public ResponseEntity<Object> findById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(enrollmentService.findById(id));
+        } catch (EnrollmentNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.of(e.getMessage()));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().body(ErrorResponse.of(e.getMessage()));
+        }
     }
 
     @GetMapping
@@ -35,13 +55,25 @@ public class EnrollmentController {
     }
 
     @PatchMapping("/{id}/cancel")
-    public ResponseEntity<EnrollmentDTO> cancel(@PathVariable Long id) {
-        return ResponseEntity.ok(enrollmentService.cancel(id));
+    public ResponseEntity<Object> cancel(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(enrollmentService.cancel(id));
+        } catch (EnrollmentNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.of(e.getMessage()));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().body(ErrorResponse.of(e.getMessage()));
+        }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
-        enrollmentService.deleteById(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<Object> delete(@PathVariable Long id) {
+        try {
+            enrollmentService.deleteById(id);
+            return ResponseEntity.noContent().build();
+        } catch (EnrollmentNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.of(e.getMessage()));
+        } catch (BusinessException e) {
+            return ResponseEntity.badRequest().body(ErrorResponse.of(e.getMessage()));
+        }
     }
 }

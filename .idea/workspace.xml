@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31ba8c22-33fe-40ab-bd27-13c3ff05e32d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/StudentRepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/ErrorResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/ApiGestionDeCursosApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/ApiGestionDeCursosApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/CourseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/EnrollmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/EnrollmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/model/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/model/Enrollment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/repository/EnrollmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/repository/EnrollmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/entity/EnrollmentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/entity/EnrollmentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/EnrollmentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/EnrollmentRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/jpa/EnrollmentJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/jpa/EnrollmentJpaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/jpa/StudentJpaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/infrastructure/repository/jpa/StudentJpaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/EnrollmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/EnrollmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/StudentController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
