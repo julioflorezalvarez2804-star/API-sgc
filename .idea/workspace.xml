@@ -5,8 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31ba8c22-33fe-40ab-bd27-13c3ff05e32d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/dto/CreateCourseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/dto/CreateEnrollmentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/dto/CreateStudentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/dto/response/CourseResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/dto/response/EnrollmentResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/dto/response/StudentResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/dto/response/UpdateStudentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/dto/response/UpdatecourseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/exception/CourseAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/exception/EnrollmentAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/exception/ResourceAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/exception/ResourceConflictException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/exception/StudentAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/exception/StudentEmailAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/domain/exception/StudentPhoneAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/advice/GlobalExcepcionHander.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/application/service/impl/StudentRepositoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/EnrollmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/controller/EnrollmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/coursemanagement/presentation/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/CourseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/CourseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/EnrollmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/EnrollmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/coursemanagement/presentation/StudentController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>

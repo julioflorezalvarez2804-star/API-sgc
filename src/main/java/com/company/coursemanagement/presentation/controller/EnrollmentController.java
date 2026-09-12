@@ -1,6 +1,8 @@
-package com.company.coursemanagement.presentation;
+package com.company.coursemanagement.presentation.controller;
 
+import com.company.coursemanagement.application.dto.CreateEnrollmentDTO;
 import com.company.coursemanagement.application.dto.EnrollmentDTO;
+import com.company.coursemanagement.application.dto.response.EnrollmentResponseDTO;
 import com.company.coursemanagement.application.service.EnrollmentService;
 import com.company.coursemanagement.domain.exception.BusinessException;
 import com.company.coursemanagement.domain.exception.CourseFullException;
@@ -8,6 +10,8 @@ import com.company.coursemanagement.domain.exception.CourseNotFoundException;
 import com.company.coursemanagement.domain.exception.DuplicateEnrollmentException;
 import com.company.coursemanagement.domain.exception.EnrollmentNotFoundException;
 import com.company.coursemanagement.domain.exception.StudentNotFoundException;
+import com.company.coursemanagement.presentation.ErrorResponse;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,10 +29,17 @@ public class EnrollmentController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> create(@RequestBody EnrollmentDTO enrollmentDTO) {
+    public ResponseEntity<Object> create(@Valid @RequestBody CreateEnrollmentDTO createEnrollmentDTO) {
         try {
+            EnrollmentDTO enrollmentDTO = new EnrollmentDTO(
+                    null,
+                    createEnrollmentDTO.studentId(),
+                    createEnrollmentDTO.courseId(),
+                    createEnrollmentDTO.enrollmentDate(),
+                    null
+            );
             EnrollmentDTO created = enrollmentService.create(enrollmentDTO);
-            return ResponseEntity.status(HttpStatus.CREATED).body(created);
+            return ResponseEntity.status(HttpStatus.CREATED).body(EnrollmentResponseDTO.from(created));
         } catch (StudentNotFoundException | CourseNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.of(e.getMessage()));
         } catch (DuplicateEnrollmentException | CourseFullException e) {
@@ -41,7 +52,8 @@ public class EnrollmentController {
     @GetMapping("/{id}")
     public ResponseEntity<Object> findById(@PathVariable Long id) {
         try {
-            return ResponseEntity.ok(enrollmentService.findById(id));
+            EnrollmentDTO found = enrollmentService.findById(id);
+            return ResponseEntity.ok(EnrollmentResponseDTO.from(found));
         } catch (EnrollmentNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.of(e.getMessage()));
         } catch (BusinessException e) {
@@ -50,14 +62,19 @@ public class EnrollmentController {
     }
 
     @GetMapping
-    public ResponseEntity<List<EnrollmentDTO>> findAll() {
-        return ResponseEntity.ok(enrollmentService.findAll());
+    public ResponseEntity<List<EnrollmentResponseDTO>> findAll() {
+        List<EnrollmentResponseDTO> enrollments = enrollmentService.findAll()
+                .stream()
+                .map(EnrollmentResponseDTO::from)
+                .toList();
+        return ResponseEntity.ok(enrollments);
     }
 
     @PatchMapping("/{id}/cancel")
     public ResponseEntity<Object> cancel(@PathVariable Long id) {
         try {
-            return ResponseEntity.ok(enrollmentService.cancel(id));
+            EnrollmentDTO cancelled = enrollmentService.cancel(id);
+            return ResponseEntity.ok(EnrollmentResponseDTO.from(cancelled));
         } catch (EnrollmentNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.of(e.getMessage()));
         } catch (BusinessException e) {
