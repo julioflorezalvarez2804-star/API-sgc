@@ -91,6 +91,55 @@ public class EnrollmentServiceImpl implements EnrollmentService {
     }
 
     @Override
+    public EnrollmentDTO update(Long id, EnrollmentDTO enrollmentDTO) {
+        validateId(id);
+        validate(enrollmentDTO);
+
+        Enrollment existing = enrollmentRepository.findById(id)
+                .orElseThrow(() -> new EnrollmentNotFoundException(id));
+
+        Long studentId = enrollmentDTO.studentId();
+        Long courseId = enrollmentDTO.courseId();
+
+        if (!studentRepository.existsById(studentId)) {
+            throw new StudentNotFoundException(studentId);
+        }
+        Course course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new CourseNotFoundException(courseId));
+
+        boolean changingStudentOrCourse = !existing.getStudentId().equals(studentId)
+                || !existing.getCourseId().equals(courseId);
+
+        if (changingStudentOrCourse) {
+            List<Enrollment> courseEnrollments = enrollmentRepository.findByCourseId(courseId);
+
+            boolean alreadyActive = courseEnrollments.stream()
+                    .anyMatch(e -> !e.getId().equals(id)
+                            && e.getStudentId().equals(studentId)
+                            && e.getStatus() == EnrollmentStatus.ACTIVE);
+            if (alreadyActive) {
+                throw new DuplicateEnrollmentException(studentId, courseId);
+            }
+
+            long activeCount = courseEnrollments.stream()
+                    .filter(e -> !e.getId().equals(id) && e.getStatus() == EnrollmentStatus.ACTIVE)
+                    .count();
+            if (course.getMaxCapacity() != null && activeCount >= course.getMaxCapacity()) {
+                throw new CourseFullException(courseId);
+            }
+        }
+
+        existing.setStudentId(studentId);
+        existing.setCourseId(courseId);
+        if (enrollmentDTO.enrollmentDate() != null) {
+            existing.setEnrollmentDate(enrollmentDTO.enrollmentDate());
+        }
+
+        Enrollment updated = enrollmentRepository.update(existing);
+        return EnrollmentMapper.toDTO(updated);
+    }
+
+    @Override
     public EnrollmentDTO cancel(Long id) {
         validateId(id);
         Enrollment enrollment = enrollmentRepository.findById(id)

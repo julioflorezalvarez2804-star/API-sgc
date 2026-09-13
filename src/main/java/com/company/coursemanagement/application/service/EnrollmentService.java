@@ -12,6 +12,8 @@ public interface EnrollmentService {
 
     List<EnrollmentDTO> findAll();
 
+    EnrollmentDTO update(Long id, EnrollmentDTO enrollmentDTO);
+
     EnrollmentDTO cancel(Long id);
 
     void deleteById(Long id);
